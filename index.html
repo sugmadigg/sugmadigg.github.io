@@ -1,23 +1,187 @@
 <html>
 <head>
-    <h1>Mami Redit</h1>
     
-    <title>redismom</title>
-    <meta name="mamiredit" content="hah">
+  <h1 style="font-size:50px; value; text-align:center;"> Mami redit! </h1>
+  
+  <h2 style="font: size 7px; value; text-align:center;"> Miresevini ne website-in tim </h2>
+<div id="masterdiv">
+
+	<div class="menutitle" onclick="SwitchMenu('sub1')">Site Menu</div>
+	<span class="submenu" id="sub1">
+		- <a href="https://www.instagram.com/miakhalifa/">Social of redi's mom</a><br>
+		- <a href="https://www.youtube.com/watch?v=lbTQfbTfeDA">Favorite song of redi's mom</a><br>
+		- <a href="https://www.google.com/search?q=fshati+gjylekar&bih=714&biw=1536&rlz=1C1GCEA_enAL981AL981&hl=en-US&ei=gGnBY9q_FpmTxc8Pgp290Ao&ved=0ahUKEwja_8vg38T8AhWZSfEDHYJOD6oQ4dUDCA8&uact=5&oq=fshati+gjylekar&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIICC4QkQIQ6gQyEwguEJECEOoEENwEEN4EEOAEGAE6CgguEIAEEA0Q6gQ6BggAEAcQHjoHCAAQgAQQDToICAAQBRAeEA06BggAEB4QDToVCC4QgAQQDRDqBBDcBBDeBBDgBBgBSgQIQRgBSgQIRhgBULwIWKUQYNkRaAFwAHgAgAGsAYgB_geSAQMwLjeYAQCgAQHAAQHaAQYIARABGBQ&sclient=gws-wiz-serp">Location of redi's mom</a><br>
+		- <a href="https://en.wikipedia.org/wiki/Cockfight">Hobby of redi's mom</a>
+	</span>
+
+	<div class="menutitle" onclick="SwitchMenu('sub2')">FAQ/Help</div>
+	<span class="submenu" id="sub2">
+		- <a href="https://en.wikipedia.org/wiki/K%C3%B6kar">Who is migli?</a><br>
+		- <a href="https://en.wikipedia.org/wiki/Po_(Kung_Fu_Panda)">Does redi's mom like kar?</a><br>
+		- <a href="https://www.youtube.com/watch?v=PLcKlnBOAs0&ab_channel=YuGiOhCardEU">Where is semi188 now?</a>
+	</span>
+
+	<div class="menutitle" onclick="SwitchMenu('sub3')">Help Forum</div>
+	<span class="submenu" id="sub3">
+		- <a href="https://forums.anandtech.com/threads/my-penis-is-stuck-in-the-vaccum-what-should-i-do.2260915/">Accident of migli</a><br>
+	</span>
+	
+	<div class="menutitle" onclick="SwitchMenu('sub4')">Cool Links</div>
+	<span class="submenu" id="sub4">
+		- <a href="https://www.youtube.com/watch?v=JLr96qxzcdw&ab_channel=capishe">Karipalari</a><br>
+		- <a href="https://www.youtube.com/shorts/EsXRKAYMTSM">E kujt i plasi</a><br>
+		- <a href="https://youtube.com/shorts/gvKI0N4YbR8?feature=share">Po k po</a><br>
+		- <a href="https://www.youtube.com/watch?v=WXBhcQVE9fc">Hape deren</a>
+	</span>
+
+
+</div>
+
+    
+  <title>redismom</title>
+
+  <style type="text/css">
+.menutitle{
+cursor:pointer;
+margin-bottom: 5px;
+margin-left: 680px;
+background-color:#ECECFF;
+color:#000000;
+width:140px;
+padding:2px;
+text-align:center;
+font-weight:bold;
+/*/*/border:1px solid #000000;/* */
+}
+
+.submenu{
+margin-bottom: 0.5em;
+margin-left: 680px;
+}
+</style>
+
+<script type="text/javascript">
+
+var persistmenu="yes" //"yes" or "no". Make sure each SPAN content contains an incrementing ID starting at 1 (id="sub1", id="sub2", etc)
+var persisttype="sitewide" //enter "sitewide" for menu to persist across site, "local" for this page only
+
+if (document.getElementById){ //DynamicDrive.com change
+document.write('<style type="text/css">\n')
+document.write('.submenu{display: none;}\n')
+document.write('</style>\n')
+}
+
+function SwitchMenu(obj){
+	if(document.getElementById){
+	var el = document.getElementById(obj);
+	var ar = document.getElementById("masterdiv").getElementsByTagName("span"); //DynamicDrive.com change
+		if(el.style.display != "block"){ //DynamicDrive.com change
+			for (var i=0; i<ar.length; i++){
+				if (ar[i].className=="submenu") //DynamicDrive.com change
+				ar[i].style.display = "none";
+			}
+			el.style.display = "block";
+		}else{
+			el.style.display = "none";
+		}
+	}
+}
+
+function get_cookie(Name) { 
+var search = Name + "="
+var returnvalue = "";
+if (document.cookie.length > 0) {
+offset = document.cookie.indexOf(search)
+if (offset != -1) { 
+offset += search.length
+end = document.cookie.indexOf(";", offset);
+if (end == -1) end = document.cookie.length;
+returnvalue=unescape(document.cookie.substring(offset, end))
+}
+}
+return returnvalue;
+}
+
+function onloadfunction(){
+if (persistmenu=="yes"){
+var cookiename=(persisttype=="sitewide")? "switchmenu" : window.location.pathname
+var cookievalue=get_cookie(cookiename)
+if (cookievalue!="")
+document.getElementById(cookievalue).style.display="block"
+}
+}
+
+function savemenustate(){
+var inc=1, blockid=""
+while (document.getElementById("sub"+inc)){
+if (document.getElementById("sub"+inc).style.display=="block"){
+blockid="sub"+inc
+break
+}
+inc++
+}
+var cookiename=(persisttype=="sitewide")? "switchmenu" : window.location.pathname
+var cookievalue=(persisttype=="sitewide")? blockid+";path=/" : blockid
+document.cookie=cookiename+"="+cookievalue
+}
+
+if (window.addEventListener)
+window.addEventListener("load", onloadfunction, false)
+else if (window.attachEvent)
+window.attachEvent("onload", onloadfunction)
+else if (document.getElementById)
+window.onload=onloadfunction
+
+if (persistmenu=="yes" && document.getElementById)
+window.onunload=savemenustate
+
+</script>
+  
+<p style="text-align:center;"> Kjo eshte faqja zyrtare web e mamit te redit</p>
+
+
+
+
+  <style type="text/css">
+
+    .image1
+    
+    {
+      margin-top: 10px;
+      margin-left: 605px;
+    }
+
+    .image3
+
+    {
+      margin-top: -900px;
+      margin-left: 500px;
+    }
+    </style>
+
 </head>
-<body style="background-color: rgb(250, 210, 244);"
 
-<p>Pershendetje une jam mami i redit dhe dua kor</p>
+<body style="background-color: rgb(250, 210, 244);" 
 
-<img src="auhuhfahu.jpg" alt="mami redit">
-<img src="bald.jpg" alt="koqedrruri">
-<img src="fafa.jpg" alt="noob">
-  <img src="mqdefault.jpg" alt="aaa"> 
+<p style="text-align:center;"> </p>
+<p style="text-align:center;"> Pershendetje une jam mami i redit dhe dua kor</p>
+
+<img src="auhuhfahu.jpg" class="image1" alt="mami redit" height="300" width="300">
+<p style="text-align:center;"> Une jam mallazdrufe dhe kam qejf shetitjet buze liqenit</p>
+<marquee>Abyss the legendary samurai</marquee>
+
+<img src="bald.jpg" class="image2" alt="koqedrruri"> <marquee>Mami reditt eshte suuper piiidhh</marquee>
+<p> Ky eshte burri im Qafegjat Koqedrruri</p>
+<img src="fafa.jpg" class="image3" alt="noob" height="200" width="200">
+  <img src="mqdefault.jpg" class="image4" alt="aaa"> 
+  <p style="text-align:center;">Kjo jam une ne makine, ndersa ne foton e dyte jam une duke qare pasi mora vesh qe redi eshte gay</p>
+  <span title="Redi kopil i vogel. :)" >Vure mousin ketu! </span>
+  <p style="text-align:center;">Per te mesuar me shume rreth meje klikoni linkun me poshte</p>
 
     <div>
 
-         <a href="https://en.wikipedia.org/wiki/Mia_Khalifa">Rreth mamit te redit</a>
+         <a href="https://en.wikipedia.org/wiki/Mia_Khalifa" target="_blank">Rreth mamit te redit</a>
+         <button onclick="document.location='https://www.youtube.com/watch?v=2QUCNIUdlwg'">Mendimi im per miglin</button>
     </div>
 </body>
 
-</html>
